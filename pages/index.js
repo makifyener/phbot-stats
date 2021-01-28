@@ -1,9 +1,10 @@
 import Link from "next/link";
+import Navbar from "../components/Navbar"
 
 const Index = () => (
     <>
-        <h1>Hello from Next JS</h1>
-        <Link href="/about"><a>About</a></Link>
+        <Navbar/>
+        <h1>this is home page</h1>
     </>
 )
 
