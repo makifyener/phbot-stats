@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Link from 'next/Link'
+import './Navbar.scss'
 
 class Navbar extends Component {
     constructor(props) {
@@ -16,6 +17,9 @@ class Navbar extends Component {
                 <Link href="/about">
                     <a title="About Page">About</a>
                 </Link>
+                <mark className="badge">
+                    Mark!
+                </mark>
             </nav>
         )
     }
