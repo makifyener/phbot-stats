@@ -8,14 +8,14 @@ const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const handle = app.getRequestHandler()
 
+const apiRouter = require('./api')
+
 app.prepare().then(() => {
   const server = express()
   server.use(bodyParser.urlencoded({ extended: true }))
   server.use(bodyParser.json())
 
-  server.get('/api/test', (req, res) => {
-    res.send({ message: "its working"})
-  })
+  server.use('/api', apiRouter)
 
   server.get('*', (req, res) => {
     return handle(req, res)
